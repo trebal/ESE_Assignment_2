@@ -1,8 +1,9 @@
-import java.security.cert.CertPathBuilderException;
 import java.util.ArrayList;
 
 public class DrawingBuilder {
 
+    double x;
+    double y;
     protected ArrayList<Figure> components = new ArrayList<>();
 
     public Drawing build() throws BuilderException
@@ -15,5 +16,13 @@ public class DrawingBuilder {
 
     }
 
-    public void 
+    public void setX(double x)
+    {
+
+    }
+
+    public void setY(double x)
+    {
+
+    }
 }
