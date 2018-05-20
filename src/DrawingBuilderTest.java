@@ -8,44 +8,51 @@ public class DrawingBuilderTest {
 
     // New figures can be added
     @Test
-    public void testBuilderAcceptNewFigures()
-    {
+    public void testBuilderAcceptNewFigures() {
         DrawingBuilder testDrawingBuilder = new DrawingBuilder();
-        Circle testFigure = new Circle(0.0,0.0, 1.0);
+        Circle testFigure = new Circle(0.0, 0.0, 1.0);
         testDrawingBuilder.addFigure(testFigure);
 
         assertEquals(1, testDrawingBuilder.components.size());
     }
+
     // Coordinate y is correctly assigned
     @Test
-    public void testBuilderSetX()
-    {
+    public void testBuilderSetX() {
         DrawingBuilder testDrawingBuilder = new DrawingBuilder();
-        Circle testFigure = new Circle(0.0,0.0, 1.0);
+        Circle testFigure = new Circle(0.0, 0.0, 1.0);
         testDrawingBuilder.addFigure(testFigure);
         testDrawingBuilder.setX(1.0);
 
         assertEquals(1, testDrawingBuilder.x, DELTA);
     }
+
     // Coordinate x is correctly assigned
     @Test
-    public void testBuilderSetY()
-    {
+    public void testBuilderSetY() {
         DrawingBuilder testDrawingBuilder = new DrawingBuilder();
-        Circle testFigure = new Circle(0.0,0.0, 2.0);
+        Circle testFigure = new Circle(0.0, 0.0, 2.0);
         testDrawingBuilder.addFigure(testFigure);
         testDrawingBuilder.setY(-1.0);
 
         assertEquals(-1, testDrawingBuilder.x, DELTA);
     }
+
     // Should not be possible to create a Drawing without any Figure
     @Test(expected = BuilderException.class)
-    public void testBuilderReturnsExceptionIfListIsEmpty()
-    {
+    public void testBuilderReturnsExceptionIfListIsEmpty() throws BuilderException {
         DrawingBuilder testDrawingBuilder = new DrawingBuilder();
-        Circle testFigure = new Circle(0.0,0.0, 1.0);
-        testDrawingBuilder.addFigure(testFigure);
+        Drawing testDrawing = testDrawingBuilder.build();
     }
+
     // Builder successfully builds the object
-    
+    @Test
+    public void testBuild() throws BuilderException {
+        DrawingBuilder testDrawingBuilder = new DrawingBuilder();
+        Circle testFigure = new Circle(0.0, 0.0, 1.0);
+        testDrawingBuilder.addFigure(testFigure);
+        Drawing testDrawing = testDrawingBuilder.build();
+        
+        assertEquals(Drawing.class, testDrawing.getClass());
+    }
 }
