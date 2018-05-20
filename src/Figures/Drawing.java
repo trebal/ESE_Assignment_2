@@ -1,3 +1,7 @@
+package Figures;
+
+import Operations.FigureVisitor;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

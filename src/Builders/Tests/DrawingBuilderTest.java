@@ -1,3 +1,11 @@
+package Builders.Tests;
+
+import Builders.BuilderException;
+import Builders.DrawingBuilder;
+
+import Figures.Circle;
+import Figures.Drawing;
+
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

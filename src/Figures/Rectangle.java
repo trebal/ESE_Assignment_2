@@ -1,3 +1,7 @@
+package Figures;
+
+import Operations.FigureVisitor;
+
 public class Rectangle extends Figure implements FigureOperable {
 
     private final double width;

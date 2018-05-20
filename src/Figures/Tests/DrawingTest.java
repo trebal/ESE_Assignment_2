@@ -1,3 +1,10 @@
+package Figures.Tests;
+
+import Figures.Figure;
+import Figures.Circle;
+import Figures.Rectangle;
+import Figures.Drawing;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 

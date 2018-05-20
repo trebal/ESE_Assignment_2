@@ -1,3 +1,5 @@
+package Figures;
+
 public abstract class Figure implements FigureOperable {
 
     private final double x;

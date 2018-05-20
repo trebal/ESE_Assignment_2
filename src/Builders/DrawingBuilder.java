@@ -1,10 +1,15 @@
+package Builders;
+
+import Figures.Figure;
+import Figures.Drawing;
+
 import java.util.ArrayList;
 
 public class DrawingBuilder {
 
-    protected double x;
-    protected double y;
-    protected ArrayList<Figure> components = new ArrayList<>();
+    public double x;
+    public double y;
+    public ArrayList<Figure> components = new ArrayList<>();
 
     public Drawing build() throws BuilderException {
         if (components.isEmpty()) {

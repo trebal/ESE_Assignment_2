@@ -1,3 +1,10 @@
+package Operations;
+
+import Figures.Figure;
+import Figures.Circle;
+import Figures.Rectangle;
+import Figures.Drawing;
+
 import java.util.ArrayList;
 
 public class AreaDoubler implements FigureVisitor {

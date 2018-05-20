@@ -1,3 +1,7 @@
+package Figures.Tests;
+
+import Figures.Circle;
+
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -29,7 +33,7 @@ public class CircleTest {
         double expected = 3.0;
         assertEquals(expected, testCircle.getR(), DELTA);
     }
-
+    // getA returns the area
     @Test
     public void testGetA() {
         double expected = 28.274;

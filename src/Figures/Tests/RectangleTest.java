@@ -1,3 +1,6 @@
+package Figures.Tests;
+
+import Figures.Rectangle;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
