@@ -20,7 +20,7 @@ public class Rectangle extends Figure implements FigureOperable {
 
     // Accept
     @Override
-    public void accept(FigureVisitor figureVisitor) {
-        figureVisitor.visit(this);
+    public Rectangle accept(FigureVisitor figureVisitor) {
+        return figureVisitor.visit(this);
     }
 }

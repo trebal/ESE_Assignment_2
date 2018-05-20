@@ -18,7 +18,7 @@ public class Drawing extends Figure implements FigureOperable {
 
     // Accept
     @Override
-    public void accept(FigureVisitor figureVisitor) {
-        figureVisitor.visit(this);
+    public Drawing accept(FigureVisitor figureVisitor) {
+        return figureVisitor.visit(this);
     }
 }

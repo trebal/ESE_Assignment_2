@@ -1,3 +1,3 @@
 public interface FigureOperable {
-    void accept(FigureVisitor figureVisitor);
+    Figure accept(FigureVisitor figureVisitor);
 }

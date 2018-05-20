@@ -14,7 +14,7 @@ public class Circle extends Figure implements FigureOperable {
 
     // Accept
     @Override
-    public void accept(FigureVisitor figureVisitor) {
-        figureVisitor.visit(this);
+    public Circle accept(FigureVisitor figureVisitor) {
+        return figureVisitor.visit(this);
     }
 }
