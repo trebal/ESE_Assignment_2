@@ -1,17 +1,20 @@
 public class AreaDoubler implements FigureVisitor {
 
     @Override
-    public void visit(Circle circle) {
-        
+    public Circle visit(Circle circle) {
+
+        return circle;
     }
 
     @Override
-    public void visit(Rectangle rectangle) {
+    public Rectangle visit(Rectangle rectangle) {
 
+        return rectangle;
     }
 
     @Override
-    public void visit(Drawing drawing) {
+    public Drawing visit(Drawing drawing) {
 
+        return drawing;
     }
 }

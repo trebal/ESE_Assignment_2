@@ -1,5 +1,5 @@
 public interface FigureVisitor {
-    void visit(Circle circle);
-    void visit(Rectangle rectangle);
-    void visit(Drawing drawing);
+    Circle visit(Circle circle);
+    Rectangle visit(Rectangle rectangle);
+    Drawing visit(Drawing drawing);
 }
