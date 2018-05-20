@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 public class RectangleTest {
 
-    private static final double DELTA = 1e-15;
+    private static final double DELTA = 0.001;
     private Rectangle testRectangle;
 
     @Before
@@ -34,5 +34,11 @@ public class RectangleTest {
     public void testGetHeight() {
         double expected = 6.0;
         assertEquals(expected, testRectangle.getHeight(), DELTA);
+    }
+
+    @Test
+    public void testGetA() {
+        double expected = 30.0;
+        assertEquals(expected, testRectangle.getA(), DELTA);
     }
 }

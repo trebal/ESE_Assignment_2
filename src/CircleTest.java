@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 public class CircleTest {
 
-    private static final double DELTA = 1e-15;
+    private static final double DELTA = 0.001;
     private Circle testCircle;
 
     @Before
@@ -28,5 +28,11 @@ public class CircleTest {
     public void testGetR() {
         double expected = 3.0;
         assertEquals(expected, testCircle.getR(), DELTA);
+    }
+
+    @Test
+    public void testGetA() {
+        double expected = 28.274;
+        assertEquals(expected, testCircle.getA(), DELTA);
     }
 }

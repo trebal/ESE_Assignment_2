@@ -2,14 +2,17 @@ public class AreaDoubler implements FigureVisitor {
 
     @Override
     public Circle visit(Circle circle) {
+        double r = circle.getR() * Math.sqrt(2.0);
 
-        return circle;
+        return new Circle(circle.getX(), circle.getY(), r);
     }
 
     @Override
     public Rectangle visit(Rectangle rectangle) {
+        double width = rectangle.getWidth() * Math.sqrt(2.0);
+        double height = rectangle.getHeight() * Math.sqrt(2.0);
 
-        return rectangle;
+        return new Rectangle(rectangle.getX(), rectangle.getY(), width, height);
     }
 
     @Override

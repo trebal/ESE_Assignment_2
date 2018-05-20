@@ -13,7 +13,7 @@ public class Circle extends Figure implements FigureOperable {
     }
 
     public double getA() {
-        return Math.PI * r;
+        return Math.PI * Math.pow(r, 2);
     }
     //endregion
 
