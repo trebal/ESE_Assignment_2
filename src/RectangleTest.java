@@ -13,25 +13,25 @@ public class RectangleTest {
     }
 
     @Test
-    public void getX() {
+    public void testGetX() {
         double expected = -1.0;
         assertEquals(expected, testRectangle.getX(), DELTA);
     }
 
     @Test
-    public void getY() {
+    public void testGetY() {
         double expected = 2.0;
         assertEquals(expected, testRectangle.getY(), DELTA);
     }
 
     @Test
-    public void getWidth() {
+    public void testGetWidth() {
         double expected = 5.0;
         assertEquals(expected, testRectangle.getWidth(), DELTA);
     }
 
     @Test
-    public void getHeight() {
+    public void testGetHeight() {
         double expected = 6.0;
         assertEquals(expected, testRectangle.getHeight(), DELTA);
     }
