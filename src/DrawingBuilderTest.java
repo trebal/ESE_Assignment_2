@@ -42,7 +42,7 @@ public class DrawingBuilderTest {
     @Test(expected = BuilderException.class)
     public void testBuilderReturnsExceptionIfListIsEmpty() throws BuilderException {
         DrawingBuilder testDrawingBuilder = new DrawingBuilder();
-        Drawing testDrawing = testDrawingBuilder.build();
+        testDrawingBuilder.build();
     }
 
     // Builder successfully builds the object
