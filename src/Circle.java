@@ -1,4 +1,4 @@
-public class Circle extends Figure {
+public class Circle extends Figure implements FigureOperable {
 
     private final double r;
 
@@ -10,5 +10,11 @@ public class Circle extends Figure {
     // Getters
     public double getR() {
         return r;
+    }
+
+    // Accept
+    @Override
+    public void accept(FigureVisitor figureVisitor) {
+        figureVisitor.visit(this);
     }
 }

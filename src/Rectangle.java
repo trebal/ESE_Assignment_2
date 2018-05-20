@@ -1,4 +1,4 @@
-public class Rectangle extends Figure {
+public class Rectangle extends Figure implements FigureOperable {
 
     private final double width;
     private final double height;
@@ -16,5 +16,12 @@ public class Rectangle extends Figure {
 
     public double getHeight() {
         return height;
+    }
+
+    // Accept
+    @Override
+    public void accept(FigureVisitor figureVisitor)
+    {
+        figureVisitor.visit(this);
     }
 }
