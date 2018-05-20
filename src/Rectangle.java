@@ -9,7 +9,7 @@ public class Rectangle extends Figure implements FigureOperable {
         this.height = height;
     }
 
-    // Getters
+    //region Getters
     public double getWidth() {
         return width;
     }
@@ -17,6 +17,11 @@ public class Rectangle extends Figure implements FigureOperable {
     public double getHeight() {
         return height;
     }
+
+    public double getA() {
+        return width * height;
+    }
+    //endregion
 
     // Accept
     @Override

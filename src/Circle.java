@@ -7,10 +7,15 @@ public class Circle extends Figure implements FigureOperable {
         this.r = r;
     }
 
-    // Getters
+    //region Getters
     public double getR() {
         return r;
     }
+
+    public double getA() {
+        return Math.PI * r;
+    }
+    //endregion
 
     // Accept
     @Override
