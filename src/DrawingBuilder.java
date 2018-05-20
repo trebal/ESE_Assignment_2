@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class DrawingBuilder {
 
-    double x;
-    double y;
+    protected double x;
+    protected double y;
     protected ArrayList<Figure> components = new ArrayList<>();
 
     public Drawing build() throws BuilderException
@@ -13,16 +13,16 @@ public class DrawingBuilder {
 
     public void addFigure(Figure figure)
     {
-
+        components.add(figure);
     }
 
     public void setX(double x)
     {
-
+        this.x = x;
     }
 
-    public void setY(double x)
+    public void setY(double y)
     {
-
+        this.y = y;
     }
 }

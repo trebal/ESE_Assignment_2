@@ -24,7 +24,7 @@ public class DrawingBuilderTest {
         testDrawingBuilder.addFigure(testFigure);
         testDrawingBuilder.setX(1.0);
 
-        assertEquals(1, testDrawingBuilder.x, DELTA);
+        assertEquals(1.0, testDrawingBuilder.x, DELTA);
     }
 
     // Coordinate x is correctly assigned
@@ -35,7 +35,7 @@ public class DrawingBuilderTest {
         testDrawingBuilder.addFigure(testFigure);
         testDrawingBuilder.setY(-1.0);
 
-        assertEquals(-1, testDrawingBuilder.x, DELTA);
+        assertEquals(-1.0, testDrawingBuilder.y, DELTA);
     }
 
     // Should not be possible to create a Drawing without any Figure
@@ -52,7 +52,7 @@ public class DrawingBuilderTest {
         Circle testFigure = new Circle(0.0, 0.0, 1.0);
         testDrawingBuilder.addFigure(testFigure);
         Drawing testDrawing = testDrawingBuilder.build();
-        
+
         assertEquals(Drawing.class, testDrawing.getClass());
     }
 }
