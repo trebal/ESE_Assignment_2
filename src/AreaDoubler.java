@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class AreaDoubler implements FigureVisitor {
 
     @Override
@@ -17,7 +19,11 @@ public class AreaDoubler implements FigureVisitor {
 
     @Override
     public Drawing visit(Drawing drawing) {
+        ArrayList<Figure> components = new ArrayList<>();
+        for (Figure figure : drawing.getComponents()) {
+            components.add(figure.accept(this));
+        }
 
-        return drawing;
+        return new Drawing(drawing.getX(), drawing.getY(), components);
     }
 }

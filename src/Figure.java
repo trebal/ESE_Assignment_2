@@ -1,4 +1,4 @@
-public abstract class Figure {
+public abstract class Figure implements FigureOperable {
 
     private final double x;
     private final double y;

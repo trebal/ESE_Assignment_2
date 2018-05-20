@@ -41,15 +41,14 @@ public class AreaDoublerTest {
     public void testVisitDrawing() {
         ArrayList<Figure> components = new ArrayList<>();
         Circle testCircle = new Circle(0.0, 0.0, 2.0);
+        double expected = testCircle.getA() * 2;
         components.add(testCircle);
         Drawing testDrawing = new Drawing(0.0, 0.0, components);
-        testDrawing.accept(testAreaDoubler);
+        Drawing scaledDrawing = testDrawing.accept(testAreaDoubler);
 
-        List<Figure> drawingDoubledComponents = testDrawing.getComponents();
-        double expected = 0.0;
+        List<Figure> drawingDoubledComponents = scaledDrawing.getComponents();
         double actual = ((Circle) drawingDoubledComponents.get(0)).getA();
 
         assertEquals(expected, actual, DELTA);
     }
 }
-
