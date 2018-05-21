@@ -69,7 +69,7 @@ public class DrawingBuilder {
     }
 
     /**
-     * Set the <b>y</b> of the Drawing.
+     * Sets the <b>y</b> of the Drawing.
      * @param y The <b>y</b> coordinate.
      */
     public void setY(double y) {

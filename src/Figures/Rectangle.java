@@ -14,7 +14,7 @@ import Operations.FigureVisitor;
  * @see FigureOperable
  * @see FigureVisitor
  */
-public class Rectangle extends Figure implements FigureOperable {
+public class Rectangle extends Figure {
     /**
      * The <b>width</b> of the Rectangle.
      */
@@ -26,9 +26,10 @@ public class Rectangle extends Figure implements FigureOperable {
 
     /**
      * The constructor of the class.
-     * @param x Coordinate <p>x</p> of the superclass.
-     * @param y Coordinate <b>y</b> of the superclass.
-     * @param width The <b>width</b> of the Rectangle.
+     *
+     * @param x      Coordinate <p>x</p> of the superclass.
+     * @param y      Coordinate <b>y</b> of the superclass.
+     * @param width  The <b>width</b> of the Rectangle.
      * @param height The <b>height</b> of the Rectangle.
      */
     public Rectangle(double x, double y, double width, double height) {
@@ -41,6 +42,7 @@ public class Rectangle extends Figure implements FigureOperable {
 
     /**
      * Returns the <b>width</b> of the Rectangle.
+     *
      * @return The <b>width</b>.
      */
     public double getWidth() {
@@ -49,6 +51,7 @@ public class Rectangle extends Figure implements FigureOperable {
 
     /**
      * Returns the <b>height</b> of the Rectangle.
+     *
      * @return The <b>height</b>.
      */
     public double getHeight() {
@@ -57,6 +60,7 @@ public class Rectangle extends Figure implements FigureOperable {
 
     /**
      * Calculates and returns the <b>area</b> of the Rectangle.
+     *
      * @return The <b>area</b>.
      */
     public double getA() {
@@ -68,6 +72,7 @@ public class Rectangle extends Figure implements FigureOperable {
 
     /**
      * Accepts the visitor. Being this class immutable, returns a new <b>Rectangle</b>.
+     *
      * @param figureVisitor The visitor.
      * @return A new Rectangle.
      * @see FigureVisitor

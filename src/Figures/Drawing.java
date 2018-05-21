@@ -17,7 +17,7 @@ import java.util.List;
  * @see FigureOperable
  * @see FigureVisitor
  */
-public class Drawing extends Figure implements FigureOperable {
+public class Drawing extends Figure {
     /**
      * A list of <b>Figure</b> components.
      */
@@ -25,8 +25,9 @@ public class Drawing extends Figure implements FigureOperable {
 
     /**
      * The constructor of the class.
-     * @param x Coordinate <p>x</p> of the superclass.
-     * @param y Coordinate <b>y</b> of the superclass.
+     *
+     * @param x          Coordinate <p>x</p> of the superclass.
+     * @param y          Coordinate <b>y</b> of the superclass.
      * @param components A list of <b>Figure</b> components.
      */
     public Drawing(double x, double y, ArrayList<Figure> components) {
@@ -38,6 +39,7 @@ public class Drawing extends Figure implements FigureOperable {
 
     /**
      * Returns the <b>components</b> as an <b>unmodifiableList</b>.
+     *
      * @return The <b>components</b>.
      */
     public List<Figure> getComponents() {
@@ -48,6 +50,7 @@ public class Drawing extends Figure implements FigureOperable {
 
     /**
      * Accepts the visitor. Being this class immutable, returns a new <b>Drawing</b>.
+     *
      * @param figureVisitor The visitor.
      * @return A new Drawing.
      * @see FigureVisitor

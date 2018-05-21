@@ -13,7 +13,7 @@ import Operations.FigureVisitor;
  * @see FigureOperable
  * @see FigureVisitor
  */
-public class Circle extends Figure implements FigureOperable {
+public class Circle extends Figure {
     /**
      * The <b>radius</b> of the Circle.
      */
@@ -21,6 +21,7 @@ public class Circle extends Figure implements FigureOperable {
 
     /**
      * The constructor of the class.
+     *
      * @param x Coordinate <p>x</p> of the superclass.
      * @param y Coordinate <b>y</b> of the superclass.
      * @param r The <b>radius</b> of the Circle.
@@ -34,6 +35,7 @@ public class Circle extends Figure implements FigureOperable {
 
     /**
      * Returns the <b>radius</b> of the Circle.
+     *
      * @return The <b>radius</b>.
      */
     public double getR() {
@@ -42,6 +44,7 @@ public class Circle extends Figure implements FigureOperable {
 
     /**
      * Calculates and returns the <b>area</b> of the Circle.
+     *
      * @return The <b>area</b>.
      */
     public double getA() {
@@ -53,6 +56,7 @@ public class Circle extends Figure implements FigureOperable {
 
     /**
      * Accepts the visitor. Being this class immutable, returns a new <b>Circle</b>.
+     *
      * @param figureVisitor The visitor.
      * @return A new Circle.
      * @see FigureVisitor
