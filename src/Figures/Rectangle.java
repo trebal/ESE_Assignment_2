@@ -7,11 +7,9 @@ import Operations.FigureVisitor;
  * It has the methods <b>getWidth</b> and <b>getHeight</b> for obtaining the <b>height</b> and <b>width</b> respectively
  * and <b>getA</b> for calculate the area.
  * This class is immutable and the parameters can only be obtained with getters.
- * This class implements the FigureOperable interface in order to use the Visitor pattern.
  *
  * @author Ramon de Llano Chamorro
  * @version 1.0
- * @see FigureOperable
  * @see FigureVisitor
  */
 public class Rectangle extends Figure {
@@ -74,11 +72,10 @@ public class Rectangle extends Figure {
      * Accepts the visitor. Being this class immutable, returns a new <b>Rectangle</b>.
      *
      * @param figureVisitor The visitor.
-     * @return A new Rectangle.
      * @see FigureVisitor
      */
     @Override
-    public Rectangle accept(FigureVisitor figureVisitor) {
-        return figureVisitor.visit(this);
+    public void accept(FigureVisitor figureVisitor) {
+        figureVisitor.visit(this);
     }
 }

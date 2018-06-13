@@ -6,11 +6,9 @@ import Operations.FigureVisitor;
  * The class <b>Circle</b>, which extends the abstract class <b>Figure</b>.
  * It has the methods <b>getR</b> for obtaining the radius and <b>getA</b> for calculate the area.
  * This class is immutable and the parameters can only be obtained with getters.
- * This class implements the FigureOperable interface in order to use the Visitor pattern.
  *
  * @author Ramon de Llano Chamorro
  * @version 1.0
- * @see FigureOperable
  * @see FigureVisitor
  */
 public class Circle extends Figure {
@@ -58,11 +56,10 @@ public class Circle extends Figure {
      * Accepts the visitor. Being this class immutable, returns a new <b>Circle</b>.
      *
      * @param figureVisitor The visitor.
-     * @return A new Circle.
      * @see FigureVisitor
      */
     @Override
-    public Circle accept(FigureVisitor figureVisitor) {
-        return figureVisitor.visit(this);
+    public void accept(FigureVisitor figureVisitor) {
+        figureVisitor.visit(this);
     }
 }

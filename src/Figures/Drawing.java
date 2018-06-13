@@ -10,11 +10,9 @@ import java.util.List;
  * The class <b>Drawing</b>, which extends the abstract class <b>Figure</b>. It is a class composed by other <b>Figures</b>
  * It has the method <b>getComponents</b> to obtain a list of the components.
  * This class is immutable and the parameters can only be obtained with getters.
- * This class implements the FigureOperable interface in order to use the Visitor pattern.
  *
  * @author Ramon de Llano Chamorro
  * @version 1.0
- * @see FigureOperable
  * @see FigureVisitor
  */
 public class Drawing extends Figure {
@@ -52,11 +50,10 @@ public class Drawing extends Figure {
      * Accepts the visitor. Being this class immutable, returns a new <b>Drawing</b>.
      *
      * @param figureVisitor The visitor.
-     * @return A new Drawing.
      * @see FigureVisitor
      */
     @Override
-    public Drawing accept(FigureVisitor figureVisitor) {
-        return figureVisitor.visit(this);
+    public void accept(FigureVisitor figureVisitor) {
+        figureVisitor.visit(this);
     }
 }
