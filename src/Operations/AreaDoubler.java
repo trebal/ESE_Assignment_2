@@ -14,7 +14,7 @@ import java.util.ArrayList;
  * This class implements the FigureVisitor interface in order to use the Visitor pattern.
  *
  * @author Ramon de Llano Chamorro
- * @version 1.0
+ * @version 1.1
  * @see FigureVisitor
  */
 public class AreaDoubler implements FigureVisitor {
@@ -23,7 +23,6 @@ public class AreaDoubler implements FigureVisitor {
     /**
      * The visit method for <b>Circle</b>.
      * @param circle The <b>Circle</b> to be scaled.
-     * @return A new scaled <b>Circle</b>.
      */
     @Override
     public void visit(Circle circle) {
@@ -35,7 +34,6 @@ public class AreaDoubler implements FigureVisitor {
     /**
      * The visit method for <b>Rectangle</b>.
      * @param rectangle The <b>Rectangle</b> to be scaled.
-     * @return A new scaled <b>Rectangle</b>.
      */
     @Override
     public void visit(Rectangle rectangle) {
@@ -49,7 +47,6 @@ public class AreaDoubler implements FigureVisitor {
      * The visit method for <b>Drawing</b>.
      * @param drawing The <b>Drawing</b> to be scaled. Note that opposite to other Figures, this method iterates
      *                the list of Figures and scales each one.
-     * @return A new scaled <b>Drawing</b>.
      */
     @Override
     public void visit(Drawing drawing) {
@@ -66,7 +63,7 @@ public class AreaDoubler implements FigureVisitor {
     }
 
     /**
-     * Returns the scaled figure contained in this <p>AreaDoubler</p>.
+     * Returns the scaled figure contained in this <b>AreaDoubler</b>.
      * @return The scaled figure.
      */
     public Figure getFigure() {

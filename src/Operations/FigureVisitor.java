@@ -9,7 +9,7 @@ import Figures.Rectangle;
  * <b>FigureOperable</b>.
  *
  * @author Ramon de Llano Chamorro
- * @version 1.0
+ * @version 1.1
  * @see Circle
  * @see Rectangle
  * @see Drawing

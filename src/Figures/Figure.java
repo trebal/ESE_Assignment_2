@@ -9,7 +9,7 @@ import Operations.FigureVisitor;
  * This class is immutable and the parameters can only be obtained with getters.
  *
  * @author Ramon de Llano Chamorro
- * @version 1.0
+ * @version 1.1
  */
 public abstract class Figure {
 

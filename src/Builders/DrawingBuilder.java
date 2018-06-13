@@ -12,22 +12,30 @@ import java.util.ArrayList;
  * The method <b>build</b> creates the final Drawing.
  *
  * @author Ramon de Llano Chamorro
- * @version 1.0
+ * @version 1.1
  * @see Drawing
  */
 public class DrawingBuilder {
     /**
      * Coordinate <b>x</b> of the Drawing.
      */
-    public double x;
+    private double x;
     /**
-     * Coordinate <b>y</b> of the Drawing
+     * Coordinate <b>y</b> of the Drawing.
      */
-    public double y;
+    private double y;
+    /**
+     * Boolean to control if the <b>x</b> coordinate has been set or not.
+     */
+    private boolean x_set = false;
+    /**
+     * Boolean to control if the <b>y</b> coordinate has been set or not.
+     */
+    private boolean y_set = false;
     /**
      * A list of <b>Figure</b> components.
      */
-    public ArrayList<Figure> components = new ArrayList<>();
+    private ArrayList<Figure> components = new ArrayList<>();
 
     /**
      * The builder method which creates the immutable <b>Drawing</b> and allows to create the object step by step.
@@ -35,8 +43,8 @@ public class DrawingBuilder {
      * @throws BuilderException Throws this exception if the list is empty thus being a useless object.
      */
     public Drawing build() throws BuilderException {
-        if (components.isEmpty()) {
-            throw new BuilderException("The list of Figures is empty.");
+        if (!x_set || !y_set) {
+            throw new BuilderException("One/Both coordinates are missing.");
         } else {
             return new Drawing(x, y, components);
         }
@@ -50,14 +58,6 @@ public class DrawingBuilder {
         components.add(figure);
     }
 
-    /**
-     * Removes the Figure from the list.
-     * @param figure The Figure to remove.
-     */
-    public void removeFigure(Figure figure) {
-        components.remove(figure);
-    }
-
     //region Setters
 
     /**
@@ -66,6 +66,7 @@ public class DrawingBuilder {
      */
     public void setX(double x) {
         this.x = x;
+        x_set = true;
     }
 
     /**
@@ -74,6 +75,7 @@ public class DrawingBuilder {
      */
     public void setY(double y) {
         this.y = y;
+        y_set = true;
     }
     //endregion
 }
