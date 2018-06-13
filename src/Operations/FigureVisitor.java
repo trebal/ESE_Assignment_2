@@ -10,13 +10,12 @@ import Figures.Rectangle;
  *
  * @author Ramon de Llano Chamorro
  * @version 1.0
- * @see Figures.FigureOperable
  * @see Circle
  * @see Rectangle
  * @see Drawing
  */
 public interface FigureVisitor {
-    Circle visit(Circle circle);
-    Rectangle visit(Rectangle rectangle);
-    Drawing visit(Drawing drawing);
+    void visit(Circle circle);
+    void visit(Rectangle rectangle);
+    void visit(Drawing drawing);
 }

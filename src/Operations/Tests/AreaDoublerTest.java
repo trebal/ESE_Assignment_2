@@ -27,12 +27,13 @@ public class AreaDoublerTest {
     @Test
     public void testVisitCircle() {
         Circle testCircle = new Circle(0.0, 0.0, 2.0);
-        Circle doubledCircle = testCircle.accept(testAreaDoubler);
+        testCircle.accept(testAreaDoubler);
+        Circle doubledCircle = (Circle) testAreaDoubler.getFigure();
         double expected = testCircle.getA() * 2;
 
         assertEquals(expected, doubledCircle.getA(), DELTA);
     }
-
+    
     // Accept in rectangle doubles the area.
     @Test
     public void testVisitRectangle() {

@@ -19,16 +19,17 @@ import java.util.ArrayList;
  */
 public class AreaDoubler implements FigureVisitor {
 
+    private Figure figure;
     /**
      * The visit method for <b>Circle</b>.
      * @param circle The <b>Circle</b> to be scaled.
      * @return A new scaled <b>Circle</b>.
      */
     @Override
-    public Circle visit(Circle circle) {
+    public void visit(Circle circle) {
         double r = circle.getR() * Math.sqrt(2.0);
 
-        return new Circle(circle.getX(), circle.getY(), r);
+        figure = new Circle(circle.getX(), circle.getY(), r);
     }
 
     /**
@@ -37,11 +38,11 @@ public class AreaDoubler implements FigureVisitor {
      * @return A new scaled <b>Rectangle</b>.
      */
     @Override
-    public Rectangle visit(Rectangle rectangle) {
+    public void visit(Rectangle rectangle) {
         double width = rectangle.getWidth() * Math.sqrt(2.0);
         double height = rectangle.getHeight() * Math.sqrt(2.0);
 
-        return new Rectangle(rectangle.getX(), rectangle.getY(), width, height);
+        figure = new Rectangle(rectangle.getX(), rectangle.getY(), width, height);
     }
 
     /**
@@ -51,12 +52,24 @@ public class AreaDoubler implements FigureVisitor {
      * @return A new scaled <b>Drawing</b>.
      */
     @Override
-    public Drawing visit(Drawing drawing) {
+    public void visit(Drawing drawing) {
+
         ArrayList<Figure> components = new ArrayList<>();
+
         for (Figure figure : drawing.getComponents()) {
-            components.add(figure.accept(this));
+            AreaDoubler areaDoubler = new AreaDoubler();
+            figure.accept(areaDoubler);
+            components.add(areaDoubler.getFigure());
         }
 
-        return new Drawing(drawing.getX(), drawing.getY(), components);
+        figure = new Drawing(drawing.getX(), drawing.getY(), components);
+    }
+
+    /**
+     * Returns the scaled figure contained in this <p>AreaDoubler</p>.
+     * @return The scaled figure.
+     */
+    public Figure getFigure() {
+        return figure;
     }
 }
