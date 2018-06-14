@@ -54,8 +54,10 @@ public class DrawingBuilder {
      * Adds a new Figure to the list.
      * @param figure The Figure to add.
      */
-    public void addFigure(Figure figure) {
+    public DrawingBuilder addFigure(Figure figure) {
         components.add(figure);
+
+        return this;
     }
 
     //region Setters
@@ -64,18 +66,22 @@ public class DrawingBuilder {
      * Sets the <b>x</b> of the Drawing.
      * @param x The <b>x</b> coordinate.
      */
-    public void setX(double x) {
+    public DrawingBuilder setX(double x) {
         this.x = x;
         x_set = true;
+
+        return this;
     }
 
     /**
      * Sets the <b>y</b> of the Drawing.
      * @param y The <b>y</b> coordinate.
      */
-    public void setY(double y) {
+    public DrawingBuilder setY(double y) {
         this.y = y;
         y_set = true;
+
+        return this;
     }
     //endregion
 }
