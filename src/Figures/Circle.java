@@ -20,7 +20,7 @@ public class Circle extends Figure {
     /**
      * The constructor of the class.
      *
-     * @param x Coordinate <p>x</p> of the superclass.
+     * @param x Coordinate <b>x</b> of the superclass.
      * @param y Coordinate <b>y</b> of the superclass.
      * @param r The <b>radius</b> of the Circle.
      */

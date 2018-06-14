@@ -25,7 +25,7 @@ public abstract class Figure {
     /**
      * The constructor of the class.
      *
-     * @param x Coordinate <p>x</p>.
+     * @param x Coordinate <b>x</b>.
      * @param y Coordinate <b>y</b>.
      */
     Figure(double x, double y) {

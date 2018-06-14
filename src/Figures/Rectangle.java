@@ -25,7 +25,7 @@ public class Rectangle extends Figure {
     /**
      * The constructor of the class.
      *
-     * @param x      Coordinate <p>x</p> of the superclass.
+     * @param x      Coordinate <b>x</b> of the superclass.
      * @param y      Coordinate <b>y</b> of the superclass.
      * @param width  The <b>width</b> of the Rectangle.
      * @param height The <b>height</b> of the Rectangle.
