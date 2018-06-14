@@ -28,7 +28,7 @@ public class AreaDoublerTest {
     public void testVisitCircle() {
         Circle testCircle = new Circle(0.0, 0.0, 2.0);
         testCircle.accept(testAreaDoubler);
-        Circle doubledCircle = (Circle) testAreaDoubler.getFigure();
+        Circle doubledCircle = (Circle) testAreaDoubler.getScaledFigure();
         double expected = testCircle.getA() * 2;
 
         assertEquals(expected, doubledCircle.getA(), DELTA);
@@ -39,7 +39,7 @@ public class AreaDoublerTest {
     public void testVisitRectangle() {
         Rectangle testRectangle = new Rectangle(0.0, 0.0, 2.0, 3.0);
         testRectangle.accept(testAreaDoubler);
-        Rectangle doubledRectangle = (Rectangle) testAreaDoubler.getFigure();
+        Rectangle doubledRectangle = (Rectangle) testAreaDoubler.getScaledFigure();
         double expected = testRectangle.getA() * 2;
 
         assertEquals(expected, doubledRectangle.getA(), DELTA);
@@ -55,7 +55,7 @@ public class AreaDoublerTest {
         components.add(testCircle);
         Drawing testDrawing = new Drawing(0.0, 0.0, components);
         testDrawing.accept(testAreaDoubler);
-        Drawing scaledDrawing = (Drawing) testAreaDoubler.getFigure();
+        Drawing scaledDrawing = (Drawing) testAreaDoubler.getScaledFigure();
 
         List<Figure> drawingDoubledComponents = scaledDrawing.getComponents();
         double actual = ((Circle) drawingDoubledComponents.get(0)).getA();

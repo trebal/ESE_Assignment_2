@@ -8,7 +8,7 @@ import Figures.Drawing;
 import java.util.ArrayList;
 
 /**
- * The class <b>Drawing</b> is an operation class used to double the area of a <b>Figure</b>.
+ * The class <b>AreaDoubler</b> is an operation class used to double the area of a <b>Figure</b>.
  * It has a method <b>visit</b> for any <b>Figure</b> subclass in order to use the Visitor pattern.
  * The result is always a new scaled <b>Figure</b>.
  * This class implements the FigureVisitor interface in order to use the Visitor pattern.
@@ -19,7 +19,7 @@ import java.util.ArrayList;
  */
 public class AreaDoubler implements FigureVisitor {
 
-    private Figure figure;
+    private Figure scaledFigure;
     /**
      * The visit method for <b>Circle</b>.
      * @param circle The <b>Circle</b> to be scaled.
@@ -28,7 +28,7 @@ public class AreaDoubler implements FigureVisitor {
     public void visit(Circle circle) {
         double r = circle.getR() * Math.sqrt(2.0);
 
-        figure = new Circle(circle.getX(), circle.getY(), r);
+        scaledFigure = new Circle(circle.getX(), circle.getY(), r);
     }
 
     /**
@@ -40,7 +40,7 @@ public class AreaDoubler implements FigureVisitor {
         double width = rectangle.getWidth() * Math.sqrt(2.0);
         double height = rectangle.getHeight() * Math.sqrt(2.0);
 
-        figure = new Rectangle(rectangle.getX(), rectangle.getY(), width, height);
+        scaledFigure = new Rectangle(rectangle.getX(), rectangle.getY(), width, height);
     }
 
     /**
@@ -56,17 +56,17 @@ public class AreaDoubler implements FigureVisitor {
         for (Figure figure : drawing.getComponents()) {
             AreaDoubler areaDoubler = new AreaDoubler();
             figure.accept(areaDoubler);
-            components.add(areaDoubler.getFigure());
+            components.add(areaDoubler.getScaledFigure());
         }
 
-        figure = new Drawing(drawing.getX(), drawing.getY(), components);
+        scaledFigure = new Drawing(drawing.getX(), drawing.getY(), components);
     }
 
     /**
      * Returns the scaled figure contained in this <b>AreaDoubler</b>.
      * @return The scaled figure.
      */
-    public Figure getFigure() {
-        return figure;
+    public Figure getScaledFigure() {
+        return scaledFigure;
     }
 }

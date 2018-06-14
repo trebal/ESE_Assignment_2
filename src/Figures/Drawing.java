@@ -12,7 +12,7 @@ import java.util.List;
  * This class is immutable and the parameters can only be obtained with getters.
  *
  * @author Ramon de Llano Chamorro
- * @version 1.0
+ * @version 1.1
  * @see FigureVisitor
  */
 public class Drawing extends Figure {
@@ -47,7 +47,7 @@ public class Drawing extends Figure {
     // Accept
 
     /**
-     * Accepts the visitor. Being this class immutable, returns a new <b>Drawing</b>.
+     * Accepts a <b>figureVisitor</b>.
      *
      * @param figureVisitor The visitor.
      * @see FigureVisitor

@@ -9,7 +9,7 @@ import Operations.FigureVisitor;
  * This class is immutable and the parameters can only be obtained with getters.
  *
  * @author Ramon de Llano Chamorro
- * @version 1.0
+ * @version 1.1
  * @see FigureVisitor
  */
 public class Rectangle extends Figure {
@@ -69,7 +69,7 @@ public class Rectangle extends Figure {
     // Accept
 
     /**
-     * Accepts the visitor. Being this class immutable, returns a new <b>Rectangle</b>.
+     * Accepts a <b>figureVisitor</b>.
      *
      * @param figureVisitor The visitor.
      * @see FigureVisitor
